@@ -1,0 +1,25 @@
+# --- Backend (Node) ---
+rca-scheduler-backend/node_modules/
+rca-scheduler-backend/dist/
+rca-scheduler-backend/build/
+rca-scheduler-backend/.vscode/
+rca-scheduler-backend/.env
+rca-scheduler-backend/*.log
+rca-scheduler-backend/debug.log
+
+# --- Frontend (Angular) ---
+rca-scheduler-frontend/node_modules/
+rca-scheduler-frontend/dist/
+rca-scheduler-frontend/.angular/cache/
+rca-scheduler-frontend/.env
+
+# --- General ---
+.env
+*.env
+.vscode/
+.DS_Store
+Thumbs.db
+
+# --- Postman Json ---
+"RCA Scheduler.postman_collection.json"
+*.rar

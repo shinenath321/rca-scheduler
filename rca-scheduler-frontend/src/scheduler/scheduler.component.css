@@ -1,0 +1,186 @@
+/* Reset and base layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Space Grotesk', 'Segoe UI', sans-serif; /* premium font */
+  background: url('https://img.freepik.com/free-photo/curvy-narrow-muddy-road-dark-forest-surrounded-by-greenery-little-light-coming-from_181624-1825.jpg?semt=ais_hybrid&w=740&q=80') no-repeat center center fixed;
+  background-size: cover;
+  color: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Dark overlay for readability */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.55); /* slightly lighter overlay */
+  z-index: 0;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5rem;
+  background: transparent;
+  color: #e5e5e5; /* neutral */
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15); /* slightly thicker */
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.08);
+  letter-spacing: 0.8px;
+  z-index: 10;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  color: #aaa;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.15); /* slightly thicker */
+  box-shadow: 0 -2px 8px rgba(255, 255, 255, 0.08);
+  z-index: 10;
+}
+
+/* Main layout */
+main {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+  min-height: calc(100vh - 7.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+}
+
+/* Card container with perfected glass effect */
+.rca-card {
+  background: rgba(0, 0, 0, 0.3); /* lighter transparency */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 48px 32px;
+  border-radius: 20px;
+  border: none; /* clean edges */
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.08);
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 0.8s ease-out forwards;
+  z-index: 2;
+}
+
+/* Title */
+.rca-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 28px;
+  color: #f0f0f0;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.5px;
+}
+
+/* Input */
+.rca-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(20, 20, 20, 0.4);
+  color: #fff;
+  margin-bottom: 24px;
+  font-size: 1rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.rca-input:focus {
+  border: 1px solid #ccc; /* neutral glow */
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+
+/* Buttons */
+.rca-button {
+  font-weight: 700;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  margin: 12px auto;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 300px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.rca-button-green {
+  background: linear-gradient(to right, #22c55e, #16a34a);
+  color: white;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
+}
+
+.rca-button-green:hover {
+  background: linear-gradient(to right, #16a34a, #15803d);
+  transform: translateY(-2px);
+  box-shadow: 0 0 26px rgba(34, 197, 94, 0.8);
+}
+
+.rca-button-red {
+  background: linear-gradient(to right, #ef4444, #dc2626);
+  color: white;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+}
+
+.rca-button-red:hover {
+  background: linear-gradient(to right, #dc2626, #b91c1c);
+  transform: translateY(-2px);
+  box-shadow: 0 0 26px rgba(239, 68, 68, 0.8);
+}
+
+/* Message */
+.rca-message {
+  margin-top: 28px;
+  font-size: 1rem;
+  color: #ddd; /* neutral grey */
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1; /* ensure it's behind everything */
+}

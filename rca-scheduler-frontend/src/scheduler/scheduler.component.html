@@ -1,0 +1,50 @@
+
+<main>
+  <div class="rca-card">
+    <h2 class="rca-title">Enter the Incident Number</h2>
+    
+    <!-- Incident ID input -->
+    <input
+      [(ngModel)]="incidentId"
+      type="text"
+      placeholder="Incident Number"
+      class="rca-input"
+      aria-label="Incident Number"
+    />
+
+    <!-- Owner BU dropdown -->
+    <label for="ownerBU" class="rca-label">Owner BU</label>
+    <select
+      id="ownerBU"
+      [(ngModel)]="ownerBU"
+      class="rca-input"
+      aria-label="Owner BU"
+    >
+      <option value="" disabled selected>Select Owner BU</option>
+      <option *ngFor="let bu of ownerBUs" [value]="bu">{{ bu }}</option>
+    </select>
+
+    <!-- Schedule button -->
+    <button
+      (click)="scheduleRCA()"
+      class="rca-button rca-button-green"
+      [disabled]="!incidentId || !ownerBU"
+    >
+      Schedule Review Meeting for {{ incidentId || '...' }}
+    </button>
+
+    <!-- Logout button -->
+    <button
+      type="button"
+      (click)="logout()"
+      class="rca-button rca-button-red"
+    >
+      Logout
+    </button>
+  </div>
+
+</main>
+
+<footer>
+  © 2025 Razorpay Software Limited
+</footer>
